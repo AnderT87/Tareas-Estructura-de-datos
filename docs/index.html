@@ -1,55 +1,169 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estructura de Datos - Sílabus</title>
     <style>
+        /* Estilos generales (TU DISEÑO ORIGINAL) */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             background-color: #f5f6fa;
+            color: #2d3436;
+            line-height: 1.6;
         }
+
+        /* Encabezado */
         header {
-            background-color: #2d3436;
+            background: linear-gradient(135deg, #2d3436, #0984e3);
             color: white;
-            padding: 15px 0;
+            padding: 30px 20px;
             text-align: center;
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.1em;
+        }
+
+        /* Barra de navegación */
         nav {
             background-color: #636e72;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
+
         nav a {
             color: white;
             padding: 14px 20px;
             text-decoration: none;
             text-transform: uppercase;
             font-weight: bold;
+            transition: background 0.3s ease;
         }
-        nav a:hover {
+
+        nav a:hover,
+        nav a.active {
             background-color: #00cec9;
+            border-radius: 4px;
         }
+
+        /* Contenido principal */
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
         section {
-            padding: 20px;
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             display: none;
+            /* Importante para navegación */
+            animation: fadeIn 0.5s ease-in-out;
         }
+
         section.active {
             display: block;
+            /* Se muestra solo la unidad activa */
         }
+
         h2 {
             color: #0984e3;
+            margin-top: 0;
         }
+
+        /* Listas */
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        ul ul {
+            list-style-type: circle;
+            margin-left: 20px;
+            color: #555;
+        }
+
+        /* Animación */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Pie de página */
         footer {
             background-color: #2d3436;
             color: white;
             text-align: center;
-            padding: 10px;
-            margin-top: 30px;
+            padding: 15px;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        /* Estilo mínimo para desplegables (no altera tu diseño) */
+        details {
+            margin: 8px 0;
+            border: 1px solid #e6e6e6;
+            border-radius: 6px;
+            background: #fafafa;
+            padding: 6px 8px;
+        }
+
+        details summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+            /* Quita el triángulo por defecto */
+        }
+
+        details[open] {
+            background: #ffffff;
+            border-color: #0984e3;
+        }
+
+        .explicacion {
+            margin-top: 8px;
+            padding: 10px 12px;
+            background: #ffffff;
+            border-left: 4px solid #0984e3;
+            border-radius: 4px;
+            color: #2d3436;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+
+        .tema {
+            margin: 12px 0 18px;
+            padding-left: 2px;
+        }
+
+        .tema>summary {
+            font-size: 1.05em;
+            color: #0984e3;
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Asignatura: Estructura de Datos</h1>
@@ -57,52 +171,439 @@
     </header>
 
     <nav>
-        <a href="#" onclick="mostrarUnidad(1)">Unidad 1</a>
-        <a href="#" onclick="mostrarUnidad(2)">Unidad 2</a>
-        <a href="#" onclick="mostrarUnidad(3)">Unidad 3</a>
-        <a href="#" onclick="mostrarUnidad(4)">Unidad 4</a>
+        <a href="#" onclick="mostrarUnidad(1)" id="link1" class="active">Unidad 1</a>
+        <a href="#" onclick="mostrarUnidad(2)" id="link2">Unidad 2</a>
+        <a href="#" onclick="mostrarUnidad(3)" id="link3">Unidad 3</a>
+        <a href="#" onclick="mostrarUnidad(4)" id="link4">Unidad 4</a>
     </nav>
 
     <main>
+        <!-- Unidad 1 -->
         <section id="unidad1" class="active">
             <h2>Unidad 1: Fundamentos e Introducción a las Estructuras de Datos</h2>
-            <p><strong>Resultado de aprendizaje:</strong> Identifica las características y fundamentos de las estructuras de datos mediante el análisis de bibliografía especializada y casos prácticos.</p>
-            <ul>
-                <li>Introducción: historia, características, ventajas y desventajas</li>
-                <li>Tipos de datos: primitivos, compuestos, agregados y abstractos</li>
-                <li>Datos compuestos: vectores, matrices y registros</li>
-                <li>Fundamentos de algoritmia y representación de algoritmos</li>
-            </ul>
+            <p><strong>Resultado de aprendizaje:</strong> Identifica las características y fundamentos de las
+                estructuras de datos mediante el análisis de bibliografía especializada y casos prácticos.</p>
+
+            <details class="tema">
+                <summary>Introducción</summary>
+
+                <details>
+                    <summary>Historia</summary>
+                    <div class="explicacion">
+                        Las estructuras de datos surgieron como una necesidad en la evolución de la programación para
+                        organizar y manipular información de manera eficiente. Desde los primeros lenguajes de los años
+                        50 y 60 se formalizaron modelos como listas, pilas y colas para resolver problemas crecientes en
+                        complejidad.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Características</summary>
+                    <div class="explicacion">
+                        Definen cómo se almacenan, organizan y acceden los datos.
+                        Enfatizan la organización lógica, la eficiencia en inserción,
+                        eliminación y búsqueda, y la capacidad de representar relaciones entre elementos.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Ventajas</summary>
+                    <div class="explicacion">
+                        <ul>
+                            <li>Optimizan memoria y tiempo de ejecución.</li>
+                            <li>Facilitan algoritmos complejos.</li>
+                            <li>Mejoran legibilidad y mantenimiento del código.</li>
+                            <li>Favorecen reutilización de componentes.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Desventajas</summary>
+                    <div class="explicacion">
+                        <ul>
+                            <li>Requieren criterio para elegir la estructura adecuada.</li>
+                            <li>Mala elección puede causar ineficiencia.</li>
+                            <li>Algunas son complejas de implementar y mantener.</li>
+                        </ul>
+                    </div>
+                </details>
+            </details>
+
+            <details class="tema">
+                <summary>Tipos de datos</summary>
+
+                <details>
+                    <summary>Primitivos</summary>
+                    <div class="explicacion">
+                        Enteros, reales, caracteres y booleanos; base para construir tipos y estructuras más complejos.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Compuestos</summary>
+                    <div class="explicacion">
+                        Combinan varios datos primitivos en una entidad única (por ejemplo, cadenas o registros
+                        simples).
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Agregados</summary>
+                    <div class="explicacion">
+                        Son estructuras que agrupan elementos homogéneos en una sola colección,
+                        como arreglos o matrices. Permiten organizar y acceder a múltiples valores del mismo tipo de
+                        manera eficiente.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Abstractos</summary>
+                    <div class="explicacion">
+                        Definen operaciones sobre un conjunto de datos sin especificar cómo se implementan. Ejemplos son
+                        pilas, colas y listas,
+                        que se describen por su comportamiento lógico más que por su representación interna.
+                    </div>
+                </details>
+            </details>
+
+            <details class="tema">
+                <summary>Datos compuestos</summary>
+
+                <details>
+                    <summary>Vectores</summary>
+                    <div class="explicacion">
+                        Son colecciones de elementos del mismo tipo almacenados en posiciones contiguas de memoria.
+                        Permiten acceder directamente a cualquier elemento mediante un índice, lo que los hace
+                        eficientes para operaciones de lectura y escritura secuencial o aleatoria.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Matrices</summary>
+                    <div class="explicacion">
+                        Extienden el concepto de vector a dos o más dimensiones. Se utilizan para representar tablas,
+                        imágenes o relaciones bidimensionales y multidimensionales, facilitando operaciones matemáticas
+                        y de organización de datos.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Registros</summary>
+                    <div class="explicacion">
+                        Agrupan campos heterogéneos bajo un mismo nombre, donde cada campo puede ser de un tipo
+                        distinto. Son útiles para modelar entidades complejas como estudiantes, empleados o productos,
+                        ya que permiten manejar información variada en una sola estructura.
+                    </div>
+                </details>
+            </details>
+
+            <details class="tema">
+                <summary>Fundamentos de algoritmia y representación de algoritmos</summary>
+                <div class="explicacion">
+                    Los fundamentos de algoritmia se centran en el estudio de los pasos necesarios para resolver un
+                    problema de manera sistemática y eficiente. Un algoritmo debe ser finito, preciso y definido,
+                    describiendo claramente cada acción a realizar. Su representación puede hacerse mediante
+                    pseudocódigo, diagramas de flujo o directamente en un lenguaje de programación, y su análisis
+                    incluye evaluar la eficiencia temporal y espacial, utilizando notaciones como Big O para comparar
+                    distintas soluciones.
+                </div>
+            </details>
         </section>
 
+        <!-- Unidad 2 -->
         <section id="unidad2">
             <h2>Unidad 2: Estructuras de Datos Lineales</h2>
-            <p><strong>Resultado de aprendizaje:</strong> Analiza y aplica estructuras de datos lineales (listas, pilas y colas) para resolver problemas computacionales.</p>
-            <ul>
-                <li>Pila (Stack): concepto, representación, operaciones y aplicaciones</li>
-                <li>Cola (Queue): tipos, representación, operaciones y aplicaciones</li>
-                <li>Lista (List): nodos, tipos, operaciones y aplicaciones</li>
-            </ul>
+            <p><strong>Resultado de aprendizaje:</strong> Analiza y aplica estructuras de datos lineales (listas, pilas
+                y colas) para resolver problemas computacionales.</p>
+
+            <details class="tema">
+                <summary>Pila (Stack)</summary>
+
+                <details>
+                    <summary>Concepto</summary>
+                    <div class="explicacion">
+                        La pila es una estructura de datos lineal que sigue el principio LIFO (Last In, First Out),
+                        donde el último elemento en entrar es el primero en salir. Se representa comúnmente con arreglos
+                        o listas enlazadas y cuenta con operaciones básicas como Push (insertar en el tope), Pop
+                        (eliminar del tope) y Peek (consultar el elemento superior sin retirarlo). Su uso es fundamental
+                        en la evaluación de expresiones, control de llamadas a funciones y procesos de retroceso
+                        (backtracking).
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Representación</summary>
+                    <div class="explicacion">
+                        La pila puede representarse principalmente de dos formas:
+                        <li><strong>Con arreglos (arrays):</strong> se utiliza un índice que señala el tope de la pila. Cada operación
+                            Push incrementa el índice y coloca el nuevo elemento, mientras que Pop lo decrementa y
+                            elimina el último valor.</li>
+                        <li><strong>Con listas enlazadas:</strong> se emplea un nodo que actúa como tope, apuntando al siguiente nodo.
+                            Las operaciones Push y Pop se realizan añadiendo o eliminando nodos en la parte superior.
+                        </li>
+                        Ambas representaciones permiten implementar el comportamiento LIFO de manera eficiente, aunque
+                        las listas enlazadas ofrecen mayor flexibilidad en memoria dinámica.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Operaciones</summary>
+                    <div class="explicacion">
+                        <ul>
+                            <li><strong>Push:</strong> inserta en el tope.</li>
+                            <li><strong>Pop:</strong> elimina del tope.</li>
+                            <li><strong>Peek/Top:</strong> consulta el tope sin eliminar.</li>
+                            <li><strong>IsEmpty / IsFull:</strong>Verifican si la pila está vacía o llena (en implementaciones con tamaño fijo).</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Aplicaciones</summary>
+                    <div class="explicacion">
+                        Evaluación de expresiones, retroceso (backtracking), control de llamadas y pila de ejecución.
+                    </div>
+                </details>
+            </details>
+
+            <details class="tema">
+                <summary>Cola (Queue)</summary>
+
+                <details>
+                    <summary>Tipos</summary>
+                    <div class="explicacion">
+                        FIFO simple, cola circular y cola de prioridad (prioriza según criterio).
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Representación</summary>
+                    <div class="explicacion">
+                        Arreglos con índices de frente y final, o listas enlazadas con punteros correspondientes.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Operaciones</summary>
+                    <div class="explicacion">
+                        <ul>
+                            <li><strong>Enqueue:</strong> inserta al final.</li>
+                            <li><strong>Dequeue:</strong> elimina del frente.</li>
+                            <li><strong>Front:</strong> consulta el elemento del frente.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Aplicaciones</summary>
+                    <div class="explicacion">
+                        Gestión de procesos, colas de impresión, sistemas de atención, buffers.
+                    </div>
+                </details>
+            </details>
+
+            <details class="tema">
+                <summary>Lista (List)</summary>
+
+                <details>
+                    <summary>Nodos</summary>
+                    <div class="explicacion">
+                        Cada nodo contiene el dato y referencias (siguiente y/o anterior) según el tipo de lista.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Tipos</summary>
+                    <div class="explicacion">
+                        <ul>
+                            <li><strong>Simple:</strong> referencia al siguiente.</li>
+                            <li><strong>Doble:</strong> referencias al anterior y al siguiente.</li>
+                            <li><strong>Circular:</strong> el último referencia al primero.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Operaciones</summary>
+                    <div class="explicacion">
+                        Inserción y eliminación en cabeza/cola/posición, búsqueda y recorrido secuencial.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Aplicaciones</summary>
+                    <div class="explicacion">
+                        Gestión dinámica de memoria, implementación de otras estructuras (pilas/colas), tablas de
+                        símbolos.
+                    </div>
+                </details>
+            </details>
         </section>
 
+        <!-- Unidad 3 -->
         <section id="unidad3">
             <h2>Unidad 3: Estructuras de Datos No Lineales</h2>
-            <p><strong>Resultado de aprendizaje:</strong> Analiza y aplica estructuras de datos no lineales (árboles y grafos) para solucionar problemas computacionales.</p>
-            <ul>
-                <li>Visualización de algoritmos</li>
-                <li>Árboles: definición, representación y recorridos</li>
-                <li>Grafos: tipos, propiedades y aplicaciones</li>
-            </ul>
+            <p><strong>Resultado de aprendizaje:</strong> Analiza y aplica estructuras de datos no lineales (árboles y
+                grafos) para solucionar problemas computacionales.</p>
+
+            <details class="tema">
+                <summary>Visualización de algoritmos</summary>
+                <div class="explicacion">
+                    Representa gráficamente estructuras y procesos para comprender su dinámica, complejidad y
+                    comportamiento en tiempo real.
+                </div>
+            </details>
+
+            <details class="tema">
+                <summary>Árboles</summary>
+
+                <details>
+                    <summary>Definición</summary>
+                    <div class="explicacion">
+                        Estructura jerárquica de nodos con una raíz; cada nodo puede tener cero o más hijos, sin ciclos.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Representación</summary>
+                    <div class="explicacion">
+                        Nodos enlazados (referencias a hijos/padre) o arreglos (para árboles casi completos); incluye
+                        variantes como BST, AVL, Heap.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Recorridos</summary>
+                    <div class="explicacion">
+                        <ul>
+                            <li><strong>Preorden:</strong> raíz → izquierda → derecha.</li>
+                            <li><strong>Inorden:</strong> izquierda → raíz → derecha (clave en BST).</li>
+                            <li><strong>Postorden:</strong> izquierda → derecha → raíz.</li>
+                            <li><strong>Por niveles (BFS):</strong> visita por amplitud desde la raíz.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Aplicaciones</summary>
+                    <div class="explicacion">
+                        Jerarquías, sistemas de archivos, índices de bases de datos, compiladores.
+                    </div>
+                </details>
+            </details>
+
+            <details class="tema">
+                <summary>Grafos</summary>
+
+                <details>
+                    <summary>Tipos</summary>
+                    <div class="explicacion">
+                        Dirigidos/no dirigidos; ponderados/no ponderados; simples/multigrafos; bipartitos; completos,
+                        etc.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Propiedades</summary>
+                    <div class="explicacion">
+                        Grado, caminos y ciclos, conectividad, componentes, puentes y articulaciones; representaciones
+                        con lista de adyacencia o matriz.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Aplicaciones</summary>
+                    <div class="explicacion">
+                        Redes de comunicación, mapas y rutas, análisis social, dependencias.
+                    </div>
+                </details>
+            </details>
         </section>
 
+        <!-- Unidad 4 -->
         <section id="unidad4">
             <h2>Unidad 4: Búsqueda y Ordenamiento</h2>
-            <p><strong>Resultado de aprendizaje:</strong> Aplica métodos comunes de ordenamiento y búsqueda para las estructuras de datos estudiadas.</p>
-            <ul>
-                <li>Análisis de algoritmos y complejidad (Big O)</li>
-                <li>Ordenamientos: burbuja, quicksort, mergesort</li>
-                <li>Búsquedas: secuencial, binaria y hash</li>
-            </ul>
+            <p><strong>Resultado de aprendizaje:</strong> Aplica métodos comunes de ordenamiento y búsqueda para las
+                estructuras de datos estudiadas.</p>
+
+            <details class="tema">
+                <summary>Análisis de algoritmos y complejidad (Big O)</summary>
+                <div class="explicacion">
+                    Describe cómo crece el tiempo/espacio con el tamaño de la entrada. Ejemplos: O(1), O(log n), O(n),
+                    O(n log n), O(n^2).
+                </div>
+            </details>
+
+            <details class="tema">
+                <summary>Ordenamientos</summary>
+
+                <details>
+                    <summary>Burbuja</summary>
+                    <div class="explicacion">
+                        Compara pares adyacentes e intercambia si están en orden incorrecto; simplicidad alta,
+                        eficiencia baja O(n^2).
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Quicksort</summary>
+                    <div class="explicacion">
+                        Divide por pivote y ordena recursivamente sublistas; promedio O(n log n), peor caso O(n^2) si el
+                        pivote es desfavorable.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Mergesort</summary>
+                    <div class="explicacion">
+                        Divide y conquista: ordena mitades y fusiona; tiempo O(n log n) garantizado, usa memoria
+                        adicional para la fusión.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Aplicaciones</summary>
+                    <div class="explicacion">
+                        Ordenamiento de grandes volúmenes, preparación de datos para búsqueda binaria, procesamiento
+                        batch.
+                    </div>
+                </details>
+            </details>
+
+            <details class="tema">
+                <summary>Búsquedas</summary>
+
+                <details>
+                    <summary>Secuencial</summary>
+                    <div class="explicacion">
+                        Recorre uno a uno hasta encontrar o terminar; adecuada para colecciones pequeñas o no ordenadas;
+                        O(n).
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Binaria</summary>
+                    <div class="explicacion">
+                        Requiere datos ordenados; divide el rango por la mitad en cada paso; tiempo O(log n).
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Hash</summary>
+                    <div class="explicacion">
+                        Usa función hash para ubicar elementos en tabla; acceso promedio O(1); depende de buena función
+                        y manejo de colisiones.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Aplicaciones</summary>
+                    <div class="explicacion">
+                        Índices de bases de datos, caché, tablas de símbolos y diccionarios.
+                    </div>
+                </details>
+            </details>
         </section>
     </main>
 
@@ -112,10 +613,19 @@
 
     <script>
         function mostrarUnidad(num) {
-            const secciones = document.querySelectorAll("section");
+            const secciones = document.querySelectorAll("main section");
+            const links = document.querySelectorAll("nav a");
+
+            // Ocultar todas las unidades
             secciones.forEach(sec => sec.classList.remove("active"));
+            // Desactivar todos los links
+            links.forEach(link => link.classList.remove("active"));
+
+            // Mostrar unidad seleccionada y activar link
             document.getElementById(`unidad${num}`).classList.add("active");
+            document.getElementById(`link${num}`).classList.add("active");
         }
     </script>
 </body>
+
 </html>
