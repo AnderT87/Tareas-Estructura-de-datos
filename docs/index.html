@@ -309,6 +309,18 @@
                     distintas soluciones.
                 </div>
             </details>
+            <details>
+                <summary>Aplicacion Record y ArraysList</summary>
+                <div class="explicacion">
+                    <ul>
+                        <li><a href="https://lucid.app/lucidchart/b6e94d28-fc0f-4007-a6f2-b43f4d0359c8/edit?viewport_loc=-192%2C-359%2C2828%2C1138%2C0_0&invitationId=inv_f57b0588-b23f-418a-b309-99e79d32f317"
+                                target="_blank" rel="noopener noreferrer">Carrito de compra</a></li>
+                        <li><a href="https://lucid.app/lucidchart/2f1cd504-7507-461d-8287-17da15e5bd50/edit?viewport_loc=-2116%2C-740%2C4173%2C1866%2C0_0&invitationId=inv_56eda620-d5d9-4feb-8631-431bc2ae49d2"
+                                target="_blank" rel="noopener noreferrer">Biblioteca</a> </li>
+                    </ul>
+
+                </div>
+            </details>
         </section>
 
         <!-- Unidad 2 -->
@@ -335,15 +347,24 @@
                 <details>
                     <summary>Representación</summary>
                     <div class="explicacion">
-                        La pila puede representarse principalmente de dos formas:
-                        <li><strong>Con arreglos (arrays):</strong> se utiliza un índice que señala el tope de la pila. Cada operación
-                            Push incrementa el índice y coloca el nuevo elemento, mientras que Pop lo decrementa y
-                            elimina el último valor.</li>
-                        <li><strong>Con listas enlazadas:</strong> se emplea un nodo que actúa como tope, apuntando al siguiente nodo.
-                            Las operaciones Push y Pop se realizan añadiendo o eliminando nodos en la parte superior.
-                        </li>
-                        Ambas representaciones permiten implementar el comportamiento LIFO de manera eficiente, aunque
-                        las listas enlazadas ofrecen mayor flexibilidad en memoria dinámica.
+                        <ul>
+                            La pila puede representarse principalmente de dos formas:
+                            <li><strong>Con arreglos (arrays):</strong> se utiliza un índice que señala el tope de la
+                                pila.
+                                Cada operación
+                                Push incrementa el índice y coloca el nuevo elemento, mientras que Pop lo decrementa y
+                                elimina el último valor.</li>
+                            <li><strong>Con listas enlazadas:</strong> se emplea un nodo que actúa como tope, apuntando
+                                al
+                                siguiente nodo.
+                                Las operaciones Push y Pop se realizan añadiendo o eliminando nodos en la parte
+                                superior.
+                            </li>
+                            Ambas representaciones permiten implementar el comportamiento LIFO de manera eficiente,
+                            aunque
+                            las listas enlazadas ofrecen mayor flexibilidad en memoria dinámica.
+                        </ul>
+
                     </div>
                 </details>
 
@@ -354,15 +375,22 @@
                             <li><strong>Push:</strong> inserta en el tope.</li>
                             <li><strong>Pop:</strong> elimina del tope.</li>
                             <li><strong>Peek/Top:</strong> consulta el tope sin eliminar.</li>
-                            <li><strong>IsEmpty / IsFull:</strong>Verifican si la pila está vacía o llena (en implementaciones con tamaño fijo).</li>
+                            <li><strong>IsEmpty / IsFull:</strong>Verifican si la pila está vacía o llena (en
+                                implementaciones con tamaño fijo).</li>
                         </ul>
                     </div>
                 </details>
 
                 <details>
-                    <summary>Aplicaciones</summary>
+                    <summary>Aplicacion</summary>
                     <div class="explicacion">
-                        Evaluación de expresiones, retroceso (backtracking), control de llamadas y pila de ejecución.
+                        <ul>
+                            <li><a href="https://lucid.app/lucidchart/6d2573ee-4cfc-4f4c-b221-efa822a891ae/edit?viewport_loc=-1687%2C-604%2C3216%2C1138%2C0_0&invitationId=inv_275a9f46-5268-4611-ac6c-96d4bc0be4ab"
+                                    target="_blank" rel="noopener noreferrer">Pila</a></li>
+                            <li><a href="https://lucid.app/lucidchart/48991858-9f4d-4781-9ea2-a0fef664b457/edit?viewport_loc=-2186%2C-665%2C2558%2C1338%2C0_0&invitationId=inv_337f22da-ec47-44aa-9e37-ee5f7a6f50f1"
+                                    target="_blank" rel="noopener noreferrer">Navegador</a></li>
+                        </ul>
+
                     </div>
                 </details>
             </details>
@@ -371,16 +399,63 @@
                 <summary>Cola (Queue)</summary>
 
                 <details>
-                    <summary>Tipos</summary>
+                    <summary>Concepto y tipos</summary>
                     <div class="explicacion">
-                        FIFO simple, cola circular y cola de prioridad (prioriza según criterio).
+                        <ul>
+                            La cola (Queue) es una estructura de datos lineal que sigue el principio FIFO (First In,
+                            First
+                            Out), donde el primer elemento en entrar es el primero en salir. Se utiliza para modelar
+                            procesos que requieren atención en orden de llegada, como colas de impresión o gestión de
+                            tareas.
+
+                            <li>Tipos principales de colas:</li>
+
+                            <li><strong>Cola simple:</strong>Inserta elementos al final y los elimina desde el frente,
+                                siguiendo estrictamente
+                                el orden FIFO.</li>
+
+                            <li><Strong>Cola circular:</Strong>Optimiza el uso de memoria conectando el final con el
+                                inicio,
+                                evitando espacios
+                                desperdiciados.</li>
+
+                            <li><Strong>Cola doble (Deque):</Strong>Permite inserción y eliminación de elementos tanto
+                                por
+                                el frente como por el
+                                final.</li>
+
+                            <li><Strong>Cola de prioridad:</Strong>Los elementos se atienden según su nivel de
+                                prioridad, no
+                                necesariamente por
+                                orden de llegada.</li>
+                        </ul>
+
                     </div>
                 </details>
 
                 <details>
                     <summary>Representación</summary>
                     <div class="explicacion">
-                        Arreglos con índices de frente y final, o listas enlazadas con punteros correspondientes.
+                        <ul>
+                            La cola puede representarse principalmente de dos formas:
+
+                            <li><Strong>Con arreglos (arrays):</Strong>se utilizan dos índices o punteros que señalan el
+                                frente y el final de la
+                                cola. Los elementos se insertan en el final (enqueue) y se eliminan desde el frente
+                                (dequeue).
+                                En colas circulares, el final se conecta con el inicio para optimizar el espacio.</li>
+
+                            <li><Strong>Con listas enlazadas: </Strong>se emplean nodos enlazados donde uno apunta al
+                                frente y otro al final. Las
+                                operaciones se realizan añadiendo o eliminando nodos en las posiciones correspondientes,
+                                lo que
+                                permite mayor flexibilidad en memoria dinámica.</li>
+
+                            Ambas representaciones garantizan el comportamiento FIFO (First In, First Out) y se eligen
+                            según
+                            las necesidades de eficiencia y gestión de memoria.
+                        </ul>
+
                     </div>
                 </details>
 
@@ -390,15 +465,23 @@
                         <ul>
                             <li><strong>Enqueue:</strong> inserta al final.</li>
                             <li><strong>Dequeue:</strong> elimina del frente.</li>
-                            <li><strong>Front:</strong> consulta el elemento del frente.</li>
+                            <li><strong>Front / Peek:</strong> consulta el elemento del frente.</li>
+                            <li><Strong>IsEmpty / IsFull:</Strong> Verifican si la cola está vacía o llena (en
+                                implementaciones con tamaño fijo).</li>
                         </ul>
                     </div>
                 </details>
 
                 <details>
-                    <summary>Aplicaciones</summary>
+                    <summary>Aplicacion</summary>
                     <div class="explicacion">
-                        Gestión de procesos, colas de impresión, sistemas de atención, buffers.
+                        <ul>
+                            <li><a href="https://lucid.app/lucidchart/b4d6e706-fa74-4ef0-8b6f-bbd8b2e60dd1/edit?viewport_loc=-665%2C-291%2C2590%2C1043%2C0_0&invitationId=inv_0660b0da-5cca-4611-9edb-0de056a20c4b"
+                                    target="_blank" rel="noopener noreferrer">Cola Simple</a></li>
+                            <li><a href="https://lucid.app/lucidchart/ea76f967-df87-4fee-8664-36b66fa86d8b/edit?viewport_loc=-507%2C-187%2C1423%2C573%2C0_0&invitationId=inv_651c3da6-779b-4ff9-aa83-509575f0ccec"
+                                    target="_blank" rel="noopener noreferrer">Cola prioridad</a></li>
+                        </ul>
+
                     </div>
                 </details>
             </details>
